@@ -3,540 +3,390 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Me Commerce</title>
-    <link rel="stylesheet" href="css-style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <title>eTrade - Online Electronics Store</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="style.css" rel="stylesheet">
 </head>
 <body>
-    <!-- Top bar -->
-    <div class="top-bar">
+    <!-- Header -->
+    <header class="sticky-top bg-white">
         <div class="container">
-            <div class="top-bar-left">
-                <div class="language-selector">
-                    <span>En</span>
-                    <i class="fa-solid fa-chevron-down"></i>
+            <div class="row py-3 align-items-center">
+                <!-- Logo -->
+                <div class="col-md-2 col-sm-6 mb-2 mb-md-0">
+                    <a href="#" class="text-decoration-none">
+                        <h2 class="m-0 logo">eTrade</h2>
+                    </a>
                 </div>
-                <div class="currency-selector">
-                    <span>USD</span>
-                    <i class="fa-solid fa-chevron-down"></i>
+                
+                <!-- Navigation Menu -->
+                <div class="col-md-5 d-none d-md-block">
+                    <nav class="navbar navbar-expand navbar-light">
+                        <div class="collapse navbar-collapse">
+                            <ul class="navbar-nav">
+                                <li class="nav-item">
+                                    <a class="nav-link active" href="#">Home</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Shop</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Pages</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">About</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Blog</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Contact</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
                 </div>
-            </div>
-            <div class="top-bar-right">
-                <a href="#" class="join-us">Join Us</a>
-                <a href="#" class="sign-in">Sign In</a>
+                
+                <!-- Search and Icons -->
+                <div class="col-md-5 col-sm-6">
+                    <div class="d-flex justify-content-end align-items-center">
+                        <div class="search-box me-3 d-none d-md-block">
+                            <form class="d-flex">
+                                <input class="form-control" type="search" placeholder="What are you looking for?" aria-label="Search">
+                                <button class="btn btn-outline-none" type="submit">
+                                    <i class="fas fa-search"></i>
+                                </button>
+                            </form>
+                        </div>
+                        <div class="icons d-flex align-items-center">
+                            <a href="#" class="icon-link me-3">
+                                <i class="fas fa-user"></i>
+                            </a>
+                            <a href="#" class="icon-link position-relative">
+                                <i class="fas fa-shopping-cart"></i>
+                                <span id="cart-count" class="cart-badge position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                                    0
+                                </span>
+                            </a>
+                        </div>
+                        <button class="navbar-toggler ms-3 d-md-none" type="button" data-bs-toggle="collapse" data-bs-target="#mobileMenu">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-
-    <!-- Header -->
-    <header class="header">
-        <div class="container">
-            <div class="logo">
-                <a href="index.html">
-                    <i class="fa-solid fa-shop text-primary"></i>
-                    <span>MC</span>
-                </a>
-            </div>
-            <nav class="main-nav">
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="shop.html" class="active">Shop</a></li>
-                    <li><a href="#">Pages</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="blog.html">Blog</a></li>
-                    <li><a href="contact.html">Contact</a></li>
+        
+        <!-- Mobile Menu -->
+        <div class="collapse navbar-collapse d-md-none" id="mobileMenu">
+            <div class="container">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Shop</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Pages</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contact</a>
+                    </li>
                 </ul>
-            </nav>
-            <div class="header-right">
-                <div class="search-bar">
-                    <i class="fa-solid fa-magnifying-glass"></i>
-                    <input type="text" placeholder="What are you looking for?">
-                </div>
-                <div class="wishlist">
-                    <a href="#">
-                        <i class="fa-regular fa-heart"></i>
-                    </a>
-                </div>
-                <div class="cart">
-                    <a href="#">
-                        <i class="fa-solid fa-cart-shopping"></i>
-                        <span class="cart-count">2</span>
-                    </a>
-                </div>
-                <div class="user-account">
-                    <a href="#">
-                        <i class="fa-regular fa-user"></i>
-                    </a>
-                </div>
+                <form class="d-flex my-3">
+                    <input class="form-control" type="search" placeholder="What are you looking for?" aria-label="Search">
+                    <button class="btn btn-outline-none" type="submit">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </form>
             </div>
         </div>
     </header>
 
-    <!-- Breadcrumb -->
-    <div class="breadcrumb-area">
-        <div class="container">
-            <ul class="breadcrumb">
-                <li><a href="index.html">Home</a></li>
-                <li class="active">Shop</li>
-            </ul>
-            <h1>Explore All Products</h1>
-            <div class="decorative-image">
-                <img src="images/decorative-sphere.png" alt="Decorative sphere">
-            </div>
-        </div>
-    </div>
-
     <!-- Main Content -->
-    <div class="main-content">
+    <main class="py-5">
         <div class="container">
-            <div class="product-grid-container">
-                <!-- Sidebar -->
-                <div class="sidebar">
-                    <!-- Categories -->
-                    <div class="filter-box">
-                        <div class="filter-header">
-                            <h3>CATEGORIES</h3>
-                            <span class="toggle-icon">
-                                <i class="fa-solid fa-minus"></i>
-                            </span>
-                        </div>
-                        <div class="filter-body">
-                            <div class="checkbox-group">
-                                <label>
-                                    <input type="radio" name="category">
-                                    <span>Electronics</span>
-                                </label>
-                                <label>
-                                    <input type="radio" name="category">
-                                    <span>NFT</span>
-                                </label>
-                                <label>
-                                    <input type="radio" name="category">
-                                    <span>Jewellery</span>
-                                </label>
-                                <label>
-                                    <input type="radio" name="category">
-                                    <span>Fashion</span>
-                                </label>
-                                <label>
-                                    <input type="radio" name="category">
-                                    <span>Furniture</span>
-                                </label>
+            <!-- Product Exploration Title -->
+            <div class="row mb-4">
+                <div class="col-12">
+                    <h1 class="display-5 fw-bold">Explore All Products</h1>
+                </div>
+            </div>
+            
+            <div class="row">
+                <!-- Sidebar - Product Filters -->
+                <div class="col-lg-3 mb-4 mb-lg-0">
+                    <div class="filter-container p-3 bg-white rounded shadow-sm">
+                        <!-- Categories -->
+                        <div class="filter-section mb-4">
+                            <h5 class="fw-bold mb-3">CATEGORIES</h5>
+                            <div class="categories-list">
+                                <div class="form-check mb-2">
+                                    <input class="form-check-input" type="checkbox" value="Headphones" id="cat-headphones" checked>
+                                    <label class="form-check-label" for="cat-headphones">
+                                        Headphones
+                                    </label>
+                                </div>
+                                <div class="form-check mb-2">
+                                    <input class="form-check-input" type="checkbox" value="Gaming Accessories" id="cat-gaming">
+                                    <label class="form-check-label" for="cat-gaming">
+                                        Gaming Accessories
+                                    </label>
+                                </div>
+                                <div class="form-check mb-2">
+                                    <input class="form-check-input" type="checkbox" value="Keyboards & Mice" id="cat-keyboards">
+                                    <label class="form-check-label" for="cat-keyboards">
+                                        Keyboards & Mice
+                                    </label>
+                                </div>
+                                <div class="form-check mb-2">
+                                    <input class="form-check-input" type="checkbox" value="Webcams" id="cat-webcams">
+                                    <label class="form-check-label" for="cat-webcams">
+                                        Webcams
+                                    </label>
+                                </div>
+                                <div class="form-check mb-2">
+                                    <input class="form-check-input" type="checkbox" value="Speakers" id="cat-speakers">
+                                    <label class="form-check-label" for="cat-speakers">
+                                        Speakers
+                                    </label>
+                                </div>
+                                <div class="form-check mb-2">
+                                    <input class="form-check-input" type="checkbox" value="Smart Speakers" id="cat-smart-speakers">
+                                    <label class="form-check-label" for="cat-smart-speakers">
+                                        Smart Speakers
+                                    </label>
+                                </div>
                             </div>
                         </div>
-                    </div>
-
-                    <!-- Gender -->
-                    <div class="filter-box">
-                        <div class="filter-header">
-                            <h3>GENDER</h3>
-                            <span class="toggle-icon">
-                                <i class="fa-solid fa-minus"></i>
-                            </span>
-                        </div>
-                        <div class="filter-body">
-                            <div class="checkbox-group">
-                                <label>
-                                    <input type="radio" name="gender">
-                                    <span>Men</span>
-                                </label>
-                                <label>
-                                    <input type="radio" name="gender">
-                                    <span>Women</span>
-                                </label>
-                                <label>
-                                    <input type="radio" name="gender">
-                                    <span>Unisex</span>
-                                </label>
+                        
+                        <!-- Gender -->
+                        <div class="filter-section mb-4">
+                            <h5 class="fw-bold mb-3">GENDER</h5>
+                            <div class="gender-list">
+                                <div class="form-check mb-2">
+                                    <input class="form-check-input" type="radio" name="gender" id="gender-men" value="Men">
+                                    <label class="form-check-label" for="gender-men">
+                                        Men
+                                    </label>
+                                </div>
+                                <div class="form-check mb-2">
+                                    <input class="form-check-input" type="radio" name="gender" id="gender-women" value="Women">
+                                    <label class="form-check-label" for="gender-women">
+                                        Women
+                                    </label>
+                                </div>
+                                <div class="form-check mb-2">
+                                    <input class="form-check-input" type="radio" name="gender" id="gender-unisex" value="Unisex" checked>
+                                    <label class="form-check-label" for="gender-unisex">
+                                        Unisex
+                                    </label>
+                                </div>
                             </div>
                         </div>
-                    </div>
-
-                    <!-- Colors -->
-                    <div class="filter-box">
-                        <div class="filter-header">
-                            <h3>COLORS</h3>
-                            <span class="toggle-icon">
-                                <i class="fa-solid fa-minus"></i>
-                            </span>
-                        </div>
-                        <div class="filter-body">
-                            <div class="color-selector">
-                                <span class="color-circle red" data-color="red"></span>
-                                <span class="color-circle black" data-color="black"></span>
-                                <span class="color-circle blue" data-color="blue"></span>
-                                <span class="color-circle gray" data-color="gray"></span>
-                                <span class="color-circle yellow" data-color="yellow"></span>
-                                <span class="color-circle green" data-color="green"></span>
-                                <span class="color-circle navy" data-color="navy"></span>
+                        
+                        <!-- Colors -->
+                        <div class="filter-section mb-4">
+                            <h5 class="fw-bold mb-3">COLORS</h5>
+                            <div class="colors-list d-flex flex-wrap">
+                                <div class="color-circle bg-dark me-2 mb-2" data-color="black"></div>
+                                <div class="color-circle bg-white border me-2 mb-2" data-color="white"></div>
+                                <div class="color-circle bg-primary me-2 mb-2" data-color="blue"></div>
+                                <div class="color-circle bg-warning me-2 mb-2" data-color="yellow"></div>
+                                <div class="color-circle bg-success me-2 mb-2" data-color="green"></div>
+                                <div class="color-circle bg-danger me-2 mb-2" data-color="red"></div>
                             </div>
                         </div>
-                    </div>
-
-                    <!-- Size -->
-                    <div class="filter-box">
-                        <div class="filter-header">
-                            <h3>SIZE</h3>
-                            <span class="toggle-icon">
-                                <i class="fa-solid fa-minus"></i>
-                            </span>
-                        </div>
-                        <div class="filter-body">
-                            <div class="size-selector">
-                                <span class="size-box">44L</span>
-                                <span class="size-box">39L</span>
-                                <span class="size-box">XXL</span>
-                                <span class="size-box">XL</span>
-                                <span class="size-box">L</span>
-                                <span class="size-box">M</span>
-                                <span class="size-box">S</span>
-                                <span class="size-box">XS</span>
+                        
+                        <!-- Size -->
+                        <div class="filter-section mb-4">
+                            <h5 class="fw-bold mb-3">SIZE</h5>
+                            <div class="size-buttons d-flex flex-wrap">
+                                <button type="button" class="btn btn-outline-secondary me-2 mb-2 size-btn">S</button>
+                                <button type="button" class="btn btn-outline-secondary me-2 mb-2 size-btn">M</button>
+                                <button type="button" class="btn btn-outline-secondary me-2 mb-2 size-btn">L</button>
+                                <button type="button" class="btn btn-outline-secondary me-2 mb-2 size-btn">XL</button>
                             </div>
                         </div>
-                    </div>
-
-                    <!-- Price -->
-                    <div class="filter-box">
-                        <div class="filter-header">
-                            <h3>PRICE</h3>
-                            <span class="toggle-icon">
-                                <i class="fa-solid fa-minus"></i>
-                            </span>
-                        </div>
-                        <div class="filter-body">
-                            <div class="price-filter">
-                                <div class="price-selector">
-                                    <span class="price-box">50</span>
-                                    <span class="price-box">100</span>
-                                    <span class="price-box">200</span>
-                                    <span class="price-box">300</span>
-                                    <span class="price-box">400</span>
-                                    <span class="price-box">500</span>
+                        
+                        <!-- Price Range -->
+                        <div class="filter-section">
+                            <h5 class="fw-bold mb-3">PRICE</h5>
+                            <div class="price-slider">
+                                <input type="range" class="form-range" min="0" max="1000" step="10" id="priceRange">
+                            </div>
+                            <div class="price-inputs d-flex justify-content-between mt-3">
+                                <div class="input-group input-group-sm">
+                                    <span class="input-group-text">$</span>
+                                    <input type="number" class="form-control" id="minPrice" value="0">
+                                </div>
+                                <div class="px-2 d-flex align-items-center">-</div>
+                                <div class="input-group input-group-sm">
+                                    <span class="input-group-text">$</span>
+                                    <input type="number" class="form-control" id="maxPrice" value="1000">
                                 </div>
                             </div>
                         </div>
                     </div>
-
-                    <button class="reset-btn">All Reset</button>
                 </div>
-
-                <!-- Products Grid -->
-                <div class="products-grid">
-                    <!-- Product -->
-                    <div class="product-card">
-                        <div class="product-image">
-                            <img src="images/airpods-max.png" alt="30° wireless headset">
-                            <div class="discount-tag">30% OFF</div>
-                        </div>
-                        <div class="product-info">
-                            <h3 class="product-title">30° wireless headset</h3>
-                            <div class="product-price">
-                                <span class="original-price">$600</span>
-                                <span class="current-price">$400</span>
-                            </div>
-                            <div class="color-options">
-                                <span class="color-dot red"></span>
-                                <span class="color-dot black"></span>
-                                <span class="color-dot white active"></span>
-                                <span class="color-dot blue"></span>
-                            </div>
-                        </div>
+                
+                <!-- Product Listing -->
+                <div class="col-lg-9">
+                    <div class="row" id="product-container">
+                        <!-- Products will be dynamically inserted here using JavaScript -->
                     </div>
-
-                    <!-- Product -->
-                    <div class="product-card">
-                        <div class="product-image">
-                            <img src="images/ps5-controller.png" alt="PS5 DualShock 5 Wireless Controller">
-                            <div class="discount-tag">40% OFF</div>
-                        </div>
-                        <div class="product-info">
-                            <h3 class="product-title">PS5 DualShock 5 Wireless Controller</h3>
-                            <div class="product-price">
-                                <span class="original-price">$49.80</span>
-                                <span class="current-price">$29.99</span>
-                            </div>
-                            <div class="color-options">
-                                <span class="color-dot red"></span>
-                                <span class="color-dot black"></span>
-                                <span class="color-dot blue active"></span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Product -->
-                    <div class="product-card">
-                        <div class="product-image">
-                            <img src="images/keyboard.png" alt="Wired Keyboard & Mouse Combo Pack">
-                            <div class="discount-tag">44% OFF</div>
-                        </div>
-                        <div class="product-info">
-                            <h3 class="product-title">Wired Keyboard & Mouse Combo Pack</h3>
-                            <div class="product-price">
-                                <span class="original-price">$59.99</span>
-                                <span class="current-price">$32.99</span>
-                            </div>
-                            <div class="color-options">
-                                <span class="color-dot red"></span>
-                                <span class="color-dot black active"></span>
-                                <span class="color-dot blue"></span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Product -->
-                    <div class="product-card">
-                        <div class="product-image">
-                            <img src="images/streamcam.png" alt="Logitech Streamcam">
-                            <div class="discount-tag">9% OFF</div>
-                        </div>
-                        <div class="product-info">
-                            <h3 class="product-title">Logitech Streamcam</h3>
-                            <div class="product-price">
-                                <span class="original-price">$219</span>
-                                <span class="current-price">$199</span>
-                            </div>
-                            <div class="color-options">
-                                <span class="color-dot black"></span>
-                                <span class="color-dot white active"></span>
-                                <span class="color-dot gray"></span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Product -->
-                    <div class="product-card">
-                        <div class="product-image">
-                            <img src="images/speaker-system.png" alt="30° wireless headset">
-                            <div class="discount-tag">7% OFF</div>
-                        </div>
-                        <div class="product-info">
-                            <h3 class="product-title">30° wireless headset</h3>
-                            <div class="product-price">
-                                <span class="original-price">$419</span>
-                                <span class="current-price">$387</span>
-                            </div>
-                            <div class="color-options">
-                                <span class="color-dot black active"></span>
-                                <span class="color-dot white"></span>
-                                <span class="color-dot gray"></span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Product -->
-                    <div class="product-card">
-                        <div class="product-image">
-                            <img src="images/echo.png" alt="Bass Meets Clarity">
-                            <div class="discount-tag">42% OFF</div>
-                        </div>
-                        <div class="product-info">
-                            <h3 class="product-title">Bass Meets Clarity</h3>
-                            <div class="product-price">
-                                <span class="original-price">$400</span>
-                                <span class="current-price">$233</span>
-                            </div>
-                            <div class="color-options">
-                                <span class="color-dot red"></span>
-                                <span class="color-dot black active"></span>
-                                <span class="color-dot brown"></span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Product -->
-                    <div class="product-card">
-                        <div class="product-image">
-                            <img src="images/mouse.png" alt="Mouse Logitech">
-                            <div class="discount-tag">23% OFF</div>
-                        </div>
-                        <div class="product-info">
-                            <h3 class="product-title">Mouse Logitech</h3>
-                            <div class="product-price">
-                                <span class="original-price">$130</span>
-                                <span class="current-price">$100</span>
-                            </div>
-                            <div class="color-options">
-                                <span class="color-dot red"></span>
-                                <span class="color-dot black active"></span>
-                                <span class="color-dot gray"></span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Product -->
-                    <div class="product-card">
-                        <div class="product-image">
-                            <img src="images/controller.png" alt="Playstation Controller">
-                            <div class="discount-tag">40% OFF</div>
-                        </div>
-                        <div class="product-info">
-                            <h3 class="product-title">Playstation Controller</h3>
-                            <div class="product-price">
-                                <span class="original-price">$49.80</span>
-                                <span class="current-price">$29.99</span>
-                            </div>
-                            <div class="color-options">
-                                <span class="color-dot red"></span>
-                                <span class="color-dot white active"></span>
-                                <span class="color-dot blue"></span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Product -->
-                    <div class="product-card">
-                        <div class="product-image">
-                            <img src="images/headset.png" alt="Zone Headphone">
-                            <div class="discount-tag">10% OFF</div>
-                        </div>
-                        <div class="product-info">
-                            <h3 class="product-title">Zone Headphone</h3>
-                            <div class="product-price">
-                                <span class="original-price">$200</span>
-                                <span class="current-price">$179</span>
-                            </div>
-                            <div class="color-options">
-                                <span class="color-dot black active"></span>
-                                <span class="color-dot white"></span>
-                                <span class="color-dot gray"></span>
-                            </div>
+                    
+                    <!-- Load More Button -->
+                    <div class="row mt-4">
+                        <div class="col-12 text-center">
+                            <button class="btn btn-outline-primary px-4 py-2" id="load-more">Load More</button>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="load-more">
-                <button class="load-more-btn">Load more</button>
             </div>
         </div>
-    </div>
-
-    <!-- Newsletter -->
-    <section class="newsletter">
+    </main>
+    
+    <!-- Weekly Update Section -->
+    <section class="weekly-update py-5 bg-light">
         <div class="container">
-            <div class="newsletter-content">
-                <div class="newsletter-icon">
-                    <i class="fa-regular fa-envelope"></i>
-                    <span>Newsletter</span>
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <h2 class="display-6 fw-bold mb-4">Get weekly update</h2>
+                    <p class="lead mb-4">Stay informed about new products and exclusive offers</p>
+                    <div class="subscription-form">
+                        <div class="input-group mb-3">
+                            <input type="email" class="form-control py-3" placeholder="Enter your email" aria-label="Email">
+                            <button class="btn btn-primary" type="button">Subscribe</button>
+                        </div>
+                    </div>
                 </div>
-                <h2>Get weekly update</h2>
-                <div class="newsletter-form">
-                    <input type="email" placeholder="example@gmail.com">
-                    <button type="submit">Subscribe</button>
-                </div>
-                <div class="newsletter-attribution">
-                    <p>www.DownloadNewThemes.com</p>
-                </div>
-            </div>
-            <div class="newsletter-image">
-                <img src="images/gadgets.png" alt="Gadgets collection">
-            </div>
-        </div>
-    </section>
-
-    <!-- Services -->
-    <section class="services">
-        <div class="container">
-            <div class="service-item">
-                <div class="service-icon">
-                    <i class="fa-solid fa-truck-fast"></i>
-                </div>
-                <div class="service-info">
-                    <h3>Fast & Secure Delivery</h3>
-                    <p>Tell about your service.</p>
-                </div>
-            </div>
-            <div class="service-item">
-                <div class="service-icon">
-                    <i class="fa-solid fa-shield"></i>
-                </div>
-                <div class="service-info">
-                    <h3>Money Back Guarantee</h3>
-                    <p>Within 10 days.</p>
-                </div>
-            </div>
-            <div class="service-item">
-                <div class="service-icon">
-                    <i class="fa-solid fa-rotate-left"></i>
-                </div>
-                <div class="service-info">
-                    <h3>24 Hour Return Policy</h3>
-                    <p>No question ask.</p>
-                </div>
-            </div>
-            <div class="service-item">
-                <div class="service-icon">
-                    <i class="fa-solid fa-headset"></i>
-                </div>
-                <div class="service-info">
-                    <h3>Pro Quality Support</h3>
-                    <p>24/7 Live support.</p>
+                <div class="col-lg-6 text-center">
+                    <img src="/api/placeholder/400/320" class="img-fluid" alt="Wearable devices illustration">
                 </div>
             </div>
         </div>
     </section>
-
+    
+    <!-- Features Section -->
+    <section class="features py-5">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-md-3 col-6 mb-4">
+                    <div class="feature-item">
+                        <i class="fas fa-truck mb-3 feature-icon"></i>
+                        <h5>Fast & Secure Delivery</h5>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6 mb-4">
+                    <div class="feature-item">
+                        <i class="fas fa-undo mb-3 feature-icon"></i>
+                        <h5>Money Back Guarantee</h5>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6 mb-4">
+                    <div class="feature-item">
+                        <i class="fas fa-history mb-3 feature-icon"></i>
+                        <h5>24 Hour Return Policy</h5>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6 mb-4">
+                    <div class="feature-item">
+                        <i class="fas fa-headset mb-3 feature-icon"></i>
+                        <h5>Pro Quality Support</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
     <!-- Footer -->
-    <footer class="footer">
+    <footer class="footer pt-5 bg-dark text-white">
         <div class="container">
-            <div class="footer-top">
-                <div class="footer-column">
-                    <h3>Support</h3>
-                    <p>685 Market Street,<br>
-                    Las Vegas, LA 95820,<br>
-                    United States.</p>
-                    <p class="email"><i class="fa-regular fa-envelope"></i> example@domain.com</p>
-                    <p class="phone"><i class="fa-solid fa-phone"></i> (+01) 850-315-5862</p>
-                </div>
-                <div class="footer-column">
-                    <h3>Account</h3>
-                    <ul>
-                        <li><a href="#">My Account</a></li>
-                        <li><a href="#">Login</a></li>
-                        <li><a href="#">Cart</a></li>
-                        <li><a href="#">Wishlist</a></li>
-                        <li><a href="#">Shop</a></li>
+            <div class="row">
+                <!-- Support Links -->
+                <div class="col-md-3 col-sm-6 mb-4">
+                    <h5 class="mb-3">Support</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#" class="text-decoration-none footer-link">Contact Us</a></li>
+                        <li class="mb-2"><a href="#" class="text-decoration-none footer-link">FAQs</a></li>
+                        <li class="mb-2"><a href="#" class="text-decoration-none footer-link">Shipping & Returns</a></li>
+                        <li class="mb-2"><a href="#" class="text-decoration-none footer-link">Product Support</a></li>
                     </ul>
                 </div>
-                <div class="footer-column">
-                    <h3>Quick Link</h3>
-                    <ul>
-                        <li><a href="#">About Us</a></li>
-                        <li><a href="#">Privacy Policy</a></li>
-                        <li><a href="#">Terms Of Use</a></li>
-                        <li><a href="#">Contact</a></li>
+                
+                <!-- Account Links -->
+                <div class="col-md-3 col-sm-6 mb-4">
+                    <h5 class="mb-3">My Account</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#" class="text-decoration-none footer-link">My Account</a></li>
+                        <li class="mb-2"><a href="#" class="text-decoration-none footer-link">Cart</a></li>
+                        <li class="mb-2"><a href="#" class="text-decoration-none footer-link">Wishlist</a></li>
+                        <li class="mb-2"><a href="#" class="text-decoration-none footer-link">Checkout</a></li>
                     </ul>
                 </div>
-                <div class="footer-column">
-                    <h3>Download App</h3>
-                    <p>Save $3 With App & New User Only</p>
-                    <div class="app-qr">
-                        <img src="images/qr-code.png" alt="QR Code">
+                
+                <!-- Quick Links -->
+                <div class="col-md-3 col-sm-6 mb-4">
+                    <h5 class="mb-3">Quick Link</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#" class="text-decoration-none footer-link">New Arrivals</a></li>
+                        <li class="mb-2"><a href="#" class="text-decoration-none footer-link">Best Seller</a></li>
+                        <li class="mb-2"><a href="#" class="text-decoration-none footer-link">Top Rated</a></li>
+                        <li class="mb-2"><a href="#" class="text-decoration-none footer-link">Featured Products</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Download App -->
+                <div class="col-md-3 col-sm-6 mb-4">
+                    <h5 class="mb-3">Download App</h5>
+                    <p class="mb-3">Scan the QR code to download our app</p>
+                    <div class="qr-code mb-3">
+                        <img src="/api/placeholder/120/120" alt="QR Code" class="img-fluid bg-white p-2 rounded">
                     </div>
                     <div class="app-buttons">
-                        <a href="#" class="app-store"><img src="images/app-store.png" alt="App Store"></a>
-                        <a href="#" class="play-store"><img src="images/play-store.png" alt="Play Store"></a>
+                        <a href="#" class="btn btn-outline-light btn-sm mb-2 me-2">
+                            <i class="fab fa-apple me-1"></i> App Store
+                        </a>
+                        <a href="#" class="btn btn-outline-light btn-sm mb-2">
+                            <i class="fab fa-google-play me-1"></i> Google Play
+                        </a>
                     </div>
                 </div>
             </div>
-            <div class="footer-bottom">
-                <div class="footer-copyright">
-                    <p>© 2025. All rights reserved by Anthropic.</p>
+            
+            <!-- Copyright and Payment Methods -->
+            <div class="row border-top border-secondary mt-4 pt-4 pb-3">
+                <div class="col-md-6 mb-3 mb-md-0">
+                    <p class="mb-0">© 2025 eTrade. All rights reserved.</p>
                 </div>
-                <div class="footer-social">
-                    <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="#"><i class="fa-brands fa-twitter"></i></a>
-                    <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
-                    <a href="#"><i class="fa-brands fa-discord"></i></a>
-                </div>
-                <div class="payment-methods">
-                    <span>Accept For</span>
-                    <img src="images/payment-methods.png" alt="Payment methods">
+                <div class="col-md-6 text-md-end">
+                    <div class="payment-methods">
+                        <i class="fab fa-cc-visa me-2 text-light"></i>
+                        <i class="fab fa-cc-mastercard me-2 text-light"></i>
+                        <i class="fab fa-cc-paypal me-2 text-light"></i>
+                        <i class="fab fa-cc-amex text-light"></i>
+                    </div>
                 </div>
             </div>
         </div>
     </footer>
 
-    <script src="js-main.js"></script>
+    <!-- Bootstrap 5 JS with Popper -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom Data and Scripts -->
+    <script src="data.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
