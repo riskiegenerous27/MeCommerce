@@ -3,390 +3,261 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>eTrade - Online Electronics Store</title>
+    <title>Shoes E-Commerce</title>
     <!-- Bootstrap 5 CSS -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Font Awesome for icons -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
     <!-- Custom CSS -->
-    <link href="style.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Header -->
-    <header class="sticky-top bg-white">
-        <div class="container">
-            <div class="row py-3 align-items-center">
-                <!-- Logo -->
-                <div class="col-md-2 col-sm-6 mb-2 mb-md-0">
-                    <a href="#" class="text-decoration-none">
-                        <h2 class="m-0 logo">eTrade</h2>
-                    </a>
+    <!-- Content Container -->
+    <div class="container-fluid p-0 main-container">
+        <!-- Home Page -->
+        <div id="home-page" class="page active-page">
+            <!-- Header -->
+            <div class="header">
+                <div class="header-content">
+                    <h3>Welcome to</h3>
+                    <h1>Shoes</h1>
                 </div>
-                
-                <!-- Navigation Menu -->
-                <div class="col-md-5 d-none d-md-block">
-                    <nav class="navbar navbar-expand navbar-light">
-                        <div class="collapse navbar-collapse">
-                            <ul class="navbar-nav">
-                                <li class="nav-item">
-                                    <a class="nav-link active" href="#">Home</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#">Shop</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#">Pages</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#">About</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#">Blog</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#">Contact</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </nav>
+            </div>
+
+            <!-- Main Content -->
+            <div class="content">
+                <!-- Newest Shoes Section -->
+                <div class="section newest-shoes">
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                        <h2>Newest Shoes</h2>
+                        <a href="#" class="view-all">View All</a>
+                    </div>
+                    <div class="products-row" id="newest-shoes-container">
+                        <!-- Products will be inserted here via JavaScript -->
+                    </div>
                 </div>
-                
-                <!-- Search and Icons -->
-                <div class="col-md-5 col-sm-6">
-                    <div class="d-flex justify-content-end align-items-center">
-                        <div class="search-box me-3 d-none d-md-block">
-                            <form class="d-flex">
-                                <input class="form-control" type="search" placeholder="What are you looking for?" aria-label="Search">
-                                <button class="btn btn-outline-none" type="submit">
-                                    <i class="fas fa-search"></i>
-                                </button>
-                            </form>
-                        </div>
-                        <div class="icons d-flex align-items-center">
-                            <a href="#" class="icon-link me-3">
-                                <i class="fas fa-user"></i>
-                            </a>
-                            <a href="#" class="icon-link position-relative">
-                                <i class="fas fa-shopping-cart"></i>
-                                <span id="cart-count" class="cart-badge position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-                                    0
-                                </span>
-                            </a>
-                        </div>
-                        <button class="navbar-toggler ms-3 d-md-none" type="button" data-bs-toggle="collapse" data-bs-target="#mobileMenu">
-                            <span class="navbar-toggler-icon"></span>
-                        </button>
+
+                <!-- Categories Section -->
+                <div class="section categories">
+                    <h2>Categories</h2>
+                    <div class="categories-row" id="categories-container">
+                        <!-- Categories will be inserted here via JavaScript -->
+                    </div>
+                </div>
+
+                <!-- Popular Shoes Section -->
+                <div class="section popular-shoes">
+                    <h2>Popular Shoes</h2>
+                    <div class="products-list" id="popular-shoes-container">
+                        <!-- Products will be inserted here via JavaScript -->
                     </div>
                 </div>
             </div>
-        </div>
-        
-        <!-- Mobile Menu -->
-        <div class="collapse navbar-collapse d-md-none" id="mobileMenu">
-            <div class="container">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link active" href="#">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Shop</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Pages</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Blog</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Contact</a>
-                    </li>
-                </ul>
-                <form class="d-flex my-3">
-                    <input class="form-control" type="search" placeholder="What are you looking for?" aria-label="Search">
-                    <button class="btn btn-outline-none" type="submit">
-                        <i class="fas fa-search"></i>
-                    </button>
-                </form>
+
+            <!-- Bottom Navigation -->
+            <div class="bottom-nav">
+                <div class="bottom-nav-item active" data-page="home-page">
+                    <i class="bi bi-house-fill"></i>
+                    <span>Home</span>
+                </div>
+                <div class="bottom-nav-item" data-page="search-page">
+                    <i class="bi bi-search"></i>
+                    <span>Search</span>
+                </div>
+                <div class="bottom-nav-item" data-page="cart-page">
+                    <i class="bi bi-cart"></i>
+                    <span>Cart</span>
+                    <span class="cart-badge" id="cart-badge">0</span>
+                </div>
+                <div class="bottom-nav-item" data-page="wishlist-page">
+                    <i class="bi bi-heart"></i>
+                    <span>Wishlist</span>
+                </div>
+                <div class="bottom-nav-item" data-page="profile-page">
+                    <i class="bi bi-person"></i>
+                    <span>Profile</span>
+                </div>
             </div>
         </div>
-    </header>
 
-    <!-- Main Content -->
-    <main class="py-5">
-        <div class="container">
-            <!-- Product Exploration Title -->
-            <div class="row mb-4">
-                <div class="col-12">
-                    <h1 class="display-5 fw-bold">Explore All Products</h1>
+        <!-- Product Detail Page -->
+        <div id="product-detail-page" class="page">
+            <div class="detail-header">
+                <button class="back-button" onclick="goBack()">
+                    <i class="bi bi-arrow-left"></i>
+                </button>
+                <div class="detail-actions">
+                    <button class="action-button">
+                        <i class="bi bi-heart"></i>
+                    </button>
+                    <button class="action-button">
+                        <i class="bi bi-share"></i>
+                    </button>
                 </div>
             </div>
             
-            <div class="row">
-                <!-- Sidebar - Product Filters -->
-                <div class="col-lg-3 mb-4 mb-lg-0">
-                    <div class="filter-container p-3 bg-white rounded shadow-sm">
-                        <!-- Categories -->
-                        <div class="filter-section mb-4">
-                            <h5 class="fw-bold mb-3">CATEGORIES</h5>
-                            <div class="categories-list">
-                                <div class="form-check mb-2">
-                                    <input class="form-check-input" type="checkbox" value="Headphones" id="cat-headphones" checked>
-                                    <label class="form-check-label" for="cat-headphones">
-                                        Headphones
-                                    </label>
-                                </div>
-                                <div class="form-check mb-2">
-                                    <input class="form-check-input" type="checkbox" value="Gaming Accessories" id="cat-gaming">
-                                    <label class="form-check-label" for="cat-gaming">
-                                        Gaming Accessories
-                                    </label>
-                                </div>
-                                <div class="form-check mb-2">
-                                    <input class="form-check-input" type="checkbox" value="Keyboards & Mice" id="cat-keyboards">
-                                    <label class="form-check-label" for="cat-keyboards">
-                                        Keyboards & Mice
-                                    </label>
-                                </div>
-                                <div class="form-check mb-2">
-                                    <input class="form-check-input" type="checkbox" value="Webcams" id="cat-webcams">
-                                    <label class="form-check-label" for="cat-webcams">
-                                        Webcams
-                                    </label>
-                                </div>
-                                <div class="form-check mb-2">
-                                    <input class="form-check-input" type="checkbox" value="Speakers" id="cat-speakers">
-                                    <label class="form-check-label" for="cat-speakers">
-                                        Speakers
-                                    </label>
-                                </div>
-                                <div class="form-check mb-2">
-                                    <input class="form-check-input" type="checkbox" value="Smart Speakers" id="cat-smart-speakers">
-                                    <label class="form-check-label" for="cat-smart-speakers">
-                                        Smart Speakers
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <!-- Gender -->
-                        <div class="filter-section mb-4">
-                            <h5 class="fw-bold mb-3">GENDER</h5>
-                            <div class="gender-list">
-                                <div class="form-check mb-2">
-                                    <input class="form-check-input" type="radio" name="gender" id="gender-men" value="Men">
-                                    <label class="form-check-label" for="gender-men">
-                                        Men
-                                    </label>
-                                </div>
-                                <div class="form-check mb-2">
-                                    <input class="form-check-input" type="radio" name="gender" id="gender-women" value="Women">
-                                    <label class="form-check-label" for="gender-women">
-                                        Women
-                                    </label>
-                                </div>
-                                <div class="form-check mb-2">
-                                    <input class="form-check-input" type="radio" name="gender" id="gender-unisex" value="Unisex" checked>
-                                    <label class="form-check-label" for="gender-unisex">
-                                        Unisex
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <!-- Colors -->
-                        <div class="filter-section mb-4">
-                            <h5 class="fw-bold mb-3">COLORS</h5>
-                            <div class="colors-list d-flex flex-wrap">
-                                <div class="color-circle bg-dark me-2 mb-2" data-color="black"></div>
-                                <div class="color-circle bg-white border me-2 mb-2" data-color="white"></div>
-                                <div class="color-circle bg-primary me-2 mb-2" data-color="blue"></div>
-                                <div class="color-circle bg-warning me-2 mb-2" data-color="yellow"></div>
-                                <div class="color-circle bg-success me-2 mb-2" data-color="green"></div>
-                                <div class="color-circle bg-danger me-2 mb-2" data-color="red"></div>
-                            </div>
-                        </div>
-                        
-                        <!-- Size -->
-                        <div class="filter-section mb-4">
-                            <h5 class="fw-bold mb-3">SIZE</h5>
-                            <div class="size-buttons d-flex flex-wrap">
-                                <button type="button" class="btn btn-outline-secondary me-2 mb-2 size-btn">S</button>
-                                <button type="button" class="btn btn-outline-secondary me-2 mb-2 size-btn">M</button>
-                                <button type="button" class="btn btn-outline-secondary me-2 mb-2 size-btn">L</button>
-                                <button type="button" class="btn btn-outline-secondary me-2 mb-2 size-btn">XL</button>
-                            </div>
-                        </div>
-                        
-                        <!-- Price Range -->
-                        <div class="filter-section">
-                            <h5 class="fw-bold mb-3">PRICE</h5>
-                            <div class="price-slider">
-                                <input type="range" class="form-range" min="0" max="1000" step="10" id="priceRange">
-                            </div>
-                            <div class="price-inputs d-flex justify-content-between mt-3">
-                                <div class="input-group input-group-sm">
-                                    <span class="input-group-text">$</span>
-                                    <input type="number" class="form-control" id="minPrice" value="0">
-                                </div>
-                                <div class="px-2 d-flex align-items-center">-</div>
-                                <div class="input-group input-group-sm">
-                                    <span class="input-group-text">$</span>
-                                    <input type="number" class="form-control" id="maxPrice" value="1000">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+            <div class="product-detail-content" id="product-detail-content">
+                <!-- Product details will be inserted here via JavaScript -->
+            </div>
+        </div>
+
+        <!-- Cart Page -->
+        <div id="cart-page" class="page">
+            <div class="page-header">
+                <h1>My Cart</h1>
+            </div>
+            
+            <div class="cart-content" id="cart-content">
+                <!-- Cart items will be inserted here via JavaScript -->
+                <div id="empty-cart" class="empty-cart">
+                    <i class="bi bi-cart-x"></i>
+                    <p>Your cart is empty</p>
+                    <button class="btn btn-primary" onclick="switchPage('home-page')">Shop Now</button>
                 </div>
                 
-                <!-- Product Listing -->
-                <div class="col-lg-9">
-                    <div class="row" id="product-container">
-                        <!-- Products will be dynamically inserted here using JavaScript -->
+                <div id="cart-items-container" class="cart-items">
+                    <!-- Cart items will be inserted here via JavaScript -->
+                </div>
+                
+                <div id="cart-summary" class="cart-summary">
+                    <div class="promo-code">
+                        <input type="text" class="form-control" placeholder="Promo Code">
+                        <button class="btn btn-outline-primary">Apply</button>
                     </div>
                     
-                    <!-- Load More Button -->
-                    <div class="row mt-4">
-                        <div class="col-12 text-center">
-                            <button class="btn btn-outline-primary px-4 py-2" id="load-more">Load More</button>
+                    <div class="price-summary">
+                        <div class="d-flex justify-content-between">
+                            <span>Subtotal</span>
+                            <span id="subtotal-price">$0.00</span>
+                        </div>
+                        <div class="d-flex justify-content-between">
+                            <span>Shipping</span>
+                            <span id="shipping-price">$10.00</span>
+                        </div>
+                        <div class="d-flex justify-content-between total">
+                            <span>Total</span>
+                            <span id="total-price">$0.00</span>
                         </div>
                     </div>
+                    
+                    <button class="btn btn-primary checkout-btn" onclick="switchPage('checkout-page')">Checkout</button>
                 </div>
             </div>
         </div>
-    </main>
-    
-    <!-- Weekly Update Section -->
-    <section class="weekly-update py-5 bg-light">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-6 mb-4 mb-lg-0">
-                    <h2 class="display-6 fw-bold mb-4">Get weekly update</h2>
-                    <p class="lead mb-4">Stay informed about new products and exclusive offers</p>
-                    <div class="subscription-form">
-                        <div class="input-group mb-3">
-                            <input type="email" class="form-control py-3" placeholder="Enter your email" aria-label="Email">
-                            <button class="btn btn-primary" type="button">Subscribe</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 text-center">
-                    <img src="/api/placeholder/400/320" class="img-fluid" alt="Wearable devices illustration">
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- Features Section -->
-    <section class="features py-5">
-        <div class="container">
-            <div class="row text-center">
-                <div class="col-md-3 col-6 mb-4">
-                    <div class="feature-item">
-                        <i class="fas fa-truck mb-3 feature-icon"></i>
-                        <h5>Fast & Secure Delivery</h5>
-                    </div>
-                </div>
-                <div class="col-md-3 col-6 mb-4">
-                    <div class="feature-item">
-                        <i class="fas fa-undo mb-3 feature-icon"></i>
-                        <h5>Money Back Guarantee</h5>
-                    </div>
-                </div>
-                <div class="col-md-3 col-6 mb-4">
-                    <div class="feature-item">
-                        <i class="fas fa-history mb-3 feature-icon"></i>
-                        <h5>24 Hour Return Policy</h5>
-                    </div>
-                </div>
-                <div class="col-md-3 col-6 mb-4">
-                    <div class="feature-item">
-                        <i class="fas fa-headset mb-3 feature-icon"></i>
-                        <h5>Pro Quality Support</h5>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- Footer -->
-    <footer class="footer pt-5 bg-dark text-white">
-        <div class="container">
-            <div class="row">
-                <!-- Support Links -->
-                <div class="col-md-3 col-sm-6 mb-4">
-                    <h5 class="mb-3">Support</h5>
-                    <ul class="list-unstyled">
-                        <li class="mb-2"><a href="#" class="text-decoration-none footer-link">Contact Us</a></li>
-                        <li class="mb-2"><a href="#" class="text-decoration-none footer-link">FAQs</a></li>
-                        <li class="mb-2"><a href="#" class="text-decoration-none footer-link">Shipping & Returns</a></li>
-                        <li class="mb-2"><a href="#" class="text-decoration-none footer-link">Product Support</a></li>
-                    </ul>
-                </div>
-                
-                <!-- Account Links -->
-                <div class="col-md-3 col-sm-6 mb-4">
-                    <h5 class="mb-3">My Account</h5>
-                    <ul class="list-unstyled">
-                        <li class="mb-2"><a href="#" class="text-decoration-none footer-link">My Account</a></li>
-                        <li class="mb-2"><a href="#" class="text-decoration-none footer-link">Cart</a></li>
-                        <li class="mb-2"><a href="#" class="text-decoration-none footer-link">Wishlist</a></li>
-                        <li class="mb-2"><a href="#" class="text-decoration-none footer-link">Checkout</a></li>
-                    </ul>
-                </div>
-                
-                <!-- Quick Links -->
-                <div class="col-md-3 col-sm-6 mb-4">
-                    <h5 class="mb-3">Quick Link</h5>
-                    <ul class="list-unstyled">
-                        <li class="mb-2"><a href="#" class="text-decoration-none footer-link">New Arrivals</a></li>
-                        <li class="mb-2"><a href="#" class="text-decoration-none footer-link">Best Seller</a></li>
-                        <li class="mb-2"><a href="#" class="text-decoration-none footer-link">Top Rated</a></li>
-                        <li class="mb-2"><a href="#" class="text-decoration-none footer-link">Featured Products</a></li>
-                    </ul>
-                </div>
-                
-                <!-- Download App -->
-                <div class="col-md-3 col-sm-6 mb-4">
-                    <h5 class="mb-3">Download App</h5>
-                    <p class="mb-3">Scan the QR code to download our app</p>
-                    <div class="qr-code mb-3">
-                        <img src="/api/placeholder/120/120" alt="QR Code" class="img-fluid bg-white p-2 rounded">
-                    </div>
-                    <div class="app-buttons">
-                        <a href="#" class="btn btn-outline-light btn-sm mb-2 me-2">
-                            <i class="fab fa-apple me-1"></i> App Store
-                        </a>
-                        <a href="#" class="btn btn-outline-light btn-sm mb-2">
-                            <i class="fab fa-google-play me-1"></i> Google Play
-                        </a>
-                    </div>
-                </div>
+
+        <!-- Checkout Page -->
+        <div id="checkout-page" class="page">
+            <div class="page-header">
+                <button class="back-button" onclick="goBack()">
+                    <i class="bi bi-arrow-left"></i>
+                </button>
+                <h1>Checkout</h1>
             </div>
             
-            <!-- Copyright and Payment Methods -->
-            <div class="row border-top border-secondary mt-4 pt-4 pb-3">
-                <div class="col-md-6 mb-3 mb-md-0">
-                    <p class="mb-0">© 2025 eTrade. All rights reserved.</p>
-                </div>
-                <div class="col-md-6 text-md-end">
-                    <div class="payment-methods">
-                        <i class="fab fa-cc-visa me-2 text-light"></i>
-                        <i class="fab fa-cc-mastercard me-2 text-light"></i>
-                        <i class="fab fa-cc-paypal me-2 text-light"></i>
-                        <i class="fab fa-cc-amex text-light"></i>
+            <div class="checkout-content">
+                <!-- Shipping Address -->
+                <div class="checkout-section">
+                    <h3>Shipping Address</h3>
+                    <div class="address-card selected">
+                        <div class="address-info">
+                            <h4>Home</h4>
+                            <p>123 Main Street, City, Country</p>
+                        </div>
+                        <div class="address-actions">
+                            <i class="bi bi-check-circle-fill"></i>
+                        </div>
                     </div>
+                    <button class="btn btn-outline-primary btn-sm">Add New Address</button>
+                </div>
+                
+                <!-- Shipping Method -->
+                <div class="checkout-section">
+                    <h3>Shipping Method</h3>
+                    <div class="shipping-options">
+                        <div class="shipping-option selected">
+                            <div class="option-info">
+                                <h4>Standard Shipping</h4>
+                                <p>3-5 business days</p>
+                            </div>
+                            <div class="option-price">$10.00</div>
+                        </div>
+                        <div class="shipping-option">
+                            <div class="option-info">
+                                <h4>Express Shipping</h4>
+                                <p>1-2 business days</p>
+                            </div>
+                            <div class="option-price">$20.00</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Payment Method -->
+                <div class="checkout-section">
+                    <h3>Payment Method</h3>
+                    <div class="payment-options">
+                        <div class="payment-option selected">
+                            <div class="option-info">
+                                <i class="bi bi-credit-card"></i>
+                                <h4>Credit Card</h4>
+                            </div>
+                        </div>
+                        <div class="payment-option">
+                            <div class="option-info">
+                                <i class="bi bi-paypal"></i>
+                                <h4>PayPal</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Order Summary -->
+                <div class="checkout-section">
+                    <h3>Order Summary</h3>
+                    <div id="checkout-items-summary">
+                        <!-- Order items will be inserted here via JavaScript -->
+                    </div>
+                    <div class="price-summary">
+                        <div class="d-flex justify-content-between">
+                            <span>Subtotal</span>
+                            <span id="checkout-subtotal">$0.00</span>
+                        </div>
+                        <div class="d-flex justify-content-between">
+                            <span>Shipping</span>
+                            <span id="checkout-shipping">$10.00</span>
+                        </div>
+                        <div class="d-flex justify-content-between total">
+                            <span>Total</span>
+                            <span id="checkout-total">$0.00</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <button class="btn btn-primary place-order-btn" onclick="placeOrder()">Place Order</button>
+            </div>
+        </div>
+
+        <!-- Order Success Page -->
+        <div id="order-success-page" class="page">
+            <div class="success-content">
+                <div class="success-icon">
+                    <i class="bi bi-check-circle-fill"></i>
+                </div>
+                <h1>Order Successful!</h1>
+                <p>Your order #<span id="order-number">12345</span> has been placed</p>
+                <p>Estimated delivery: <span id="delivery-date">May 5-8, 2025</span></p>
+                <div class="success-buttons">
+                    <button class="btn btn-outline-primary">Track Order</button>
+                    <button class="btn btn-primary" onclick="continueShoppingAfterOrder()">Continue Shopping</button>
                 </div>
             </div>
         </div>
-    </footer>
+    </div>
 
-    <!-- Bootstrap 5 JS with Popper -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
-    <!-- Custom Data and Scripts -->
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Data JS -->
     <script src="data.js"></script>
+    <!-- Custom JS -->
     <script src="script.js"></script>
 </body>
 </html>
